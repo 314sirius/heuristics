@@ -11,7 +11,7 @@
 9. The function prints the number of each coin type the customer is getting.
 10. The function returns the dictionary with the number of each coin type. 
 """
-
+#!/usr/bin/env python
 import click
 
 
@@ -27,6 +27,7 @@ def greedy_coin(change):
     for coin in coins:
         while change >= coin:
             change -= coin
+            change=round(change,2)
             coin_dict[coin] += 1
     for coin in coin_dict:
         if coin_dict[coin] > 0:
